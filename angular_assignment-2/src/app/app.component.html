@@ -1,0 +1,21 @@
+<span class="glyphicon glyphicon-refresh glyphicon-spin spinner"  *ngIf="loading"></span>
+<div>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <a class="navbar-brand">
+        {{pageTitle}}
+      </a>
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}">
+          <a [routerLink]="['/EmployeeAdd']"> <span class="	glyphicon glyphicon-plus"></span> Add Employee</a>
+        </li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: ture}">
+          <a [routerLink]="['/EmployeeList']"> <span class="glyphicon glyphicon-th-list"></span>Employee List</a>  
+        </li>       
+      </ul>
+      <app-employee-search></app-employee-search>
+    </div>
+   
+  </nav>
+</div>
+<router-outlet></router-outlet>

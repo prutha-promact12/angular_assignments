@@ -1,0 +1,31 @@
+<!--<div style="padding: 5px 0px 0 0; float: right;"  id="search-component">
+    <h4 style="display: inline-block;">Search:</h4> 
+    <div style="display: inline-block;">
+      <input #searchBox id="search-box" (keyup)="search(searchBox.value)"/>
+    <ul class="search-result">
+      <li *ngFor="let emp of employees$ | async" >
+        <a [routerLink]="['/EmployeeEdit',emp.id,'edit']">
+          {{emp.firstName}}
+        </a>
+      </li>
+    </ul>
+    <h4 style="display: inline-block;">Employee Search</h4>
+    </div>    
+  </div>-->
+  
+  <div id="search-component" style="padding: 5px 0px 0 0; float: right;">
+    <div style="display: inline-block;">
+        <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+      
+        <ul class="search-result">
+          <li *ngFor="let employee of employees$ | async" >
+            <a routerLink="/detail/{{employee.id}}">
+              {{employee.firstName}}
+            </a>
+          </li>
+        </ul>
+    </div>
+  </div>
+  <div style="padding: 5px 0px 0 0; float: right;">
+      <h4 style="display: inline-block;">Employee Search:</h4> 
+    </div>

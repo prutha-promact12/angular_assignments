@@ -1,0 +1,69 @@
+
+<div class='panel panel-primary'>
+  <div class='panel-heading'>
+    <h4>
+        <span class="glyphicon glyphicon-th-list"></span>
+    {{pageTitle}}
+    </h4>
+  </div>
+  <div class='panel-body'>
+    <form class="form-horizontal">
+      <fieldset>
+          <div class='row'>
+              <div class="col-md-2">
+               <h4>Filter By:</h4>
+              </div>
+              <div class="col-md-4">
+                <input type="text" name="listFilter" [(ngModel)]="listFilter"/>
+              </div>
+              <div class="col-md-2">
+                <a class="btn btn-primary" [routerLink]="['/EmployeeAdd']"><span class="	glyphicon glyphicon-plus"></span>Add Employee</a>
+              </div>
+            </div>
+            <div class="row" *ngIf="listFilter">
+              <div class="col-md-6">
+                  <h3>Filtered by: {{listFilter}} </h3>
+              </div>
+          </div>
+            <div class='table-responsive'>
+              <table class='table' *ngIf='employees && employees.length'>
+                <thead>
+                  <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Contact Number</th>
+                    <th>Address</th>
+                    <th>User Name</th>
+                    <th>Password</th>
+                    <th>Gender</th>
+                    <th>Qualification</th>
+                    <th>Experince</th>
+                    <th>Codeing Languages</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor='let emp of employees | employeeFilter:listFilter'>
+                    <td><a [routerLink]="['/EmployeeDetail',emp.id]">{{emp.firstName}}</a></td>
+                    <td>{{emp.lastName}}</td>
+                    <td>{{emp.email}}</td>
+                    <td>{{emp.contactno}}</td>
+                    <td>{{emp.address}}</td>
+                    <td>{{emp.userName}}</td>
+                    <td>{{emp.password}}</td>
+                    <td>{{emp.gender}}</td>
+                    <td>{{emp.qualification}}</td>
+                    <td>{{emp.experince}}</td>
+                    <td>{{emp.codingLanguages}}</td>
+                    <td><a class="btn btn-primary" [routerLink]="['/EmployeeEdit',emp.id,'edit']"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>
+                    <td><a class="btn btn-primary" (click)="delete(emp)"> <span class="	glyphicon glyphicon-remove"></span> Delete</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+      </fieldset>
+    </form>
+   
+  </div>
+</div>
+<router-outlet></router-outlet>

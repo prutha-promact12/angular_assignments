@@ -1,0 +1,41 @@
+
+<div>
+        <div class="panel panel-primary" *ngIf="employees">
+                <div class="panel-heading" >
+                        <h4>        
+                                <i class="fas fa-info-circle"></i>
+                                {{pageTitle}}{{employees.firstName}}
+                        </h4>
+                        
+                    </div>
+                  <div class="panel-body" >
+                          <label>First Name :</label>
+                          {{employees.firstName}}<br> 
+                          <label>Last Name :</label>
+                          {{employees.lastName}}<br>
+                          <label>Email :</label>
+                          {{employees.email}}<br>
+                          <label>Contact No :</label>
+                          {{employees.contactno}}<br>
+                          <label>Address :</label>
+                          {{employees.address}}<br>
+                          <label>User Name :</label>
+                          {{employees.userName}}<br>
+                          <label>Passoword :</label>
+                          {{employees.password}}<br>
+                          <label>Gender :</label>
+                          {{employees.gender}}<br>
+                          <label>Qualification :</label>
+                          {{employees.qualification}}<br>
+                          <label>Experince :</label>
+                          {{employees.experince}}<br>
+                          <label>Coding Languages:</label>
+                          {{employees.codingLanguages}}<br>
+                  </div>
+              </div>
+              <div class="panel-footer">
+                <button  class="btn btn-primary" (click)="goBack()">  <span class="glyphicon glyphicon-chevron-left"></span>Back</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary" [routerLink]="['/EmployeeEdit',employees.id,'edit']"><span class="glyphicon glyphicon-edit"></span>Edit</button>
+        </div>
+              
+</div>
