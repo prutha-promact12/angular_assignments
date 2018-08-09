@@ -47,7 +47,7 @@ import { Location } from '@angular/common';
   }
   getEmployee(): void{
     const id=+this.route.snapshot.paramMap.get('id');
-    this.employeeService.getEmployee(id).subscribe(employee => this.employees= employee)
+    this.employeeService.getEmployee(id).subscribe(employee => this.employees= employee);
   }
   goBack(): void{
     this.location.back();

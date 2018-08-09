@@ -92,7 +92,7 @@ ngOnInit() {
     qualification=qualification;
     experince=experince;
     codingLanguages=codingLanguages;
-    if( !firstName || !lastName || email || contactno || address || userName || password || qualification || experince)
+    if( !firstName || !lastName || !email || !contactno || !address || !userName || !password || !qualification || !experince)
     {
       return;
     }
